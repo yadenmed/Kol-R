@@ -1,0 +1,41 @@
+/* Empty. Add your own CSS if you like */
+
+.logo{
+	width: 80vw;
+	height: 53.6vw;
+	max-width: 250px;
+	background-image: url('../img/sociogram.jpg');
+	background-size: cover;
+	background-repeat: round;
+	margin: 50px auto;
+	
+}
+.hello{
+	width: 100%;
+	margin: 10px auto;
+	text-shadow : 1px 1px 5px #005985;
+	color: white;
+	text-align: center;
+	background: rgba(255,255,255,0.5);
+}
+.login-view{
+	background: #005985;
+}
+.call-view{
+	background-image: url('../img/sociogram.jpg');
+	background-repeat: repeat;
+	background-size: contain;
+}
+
+#contact-video{
+	width: 95vw;
+	height: 95vw;
+}
+
+#local-video{
+	position: absolute;
+	top:0;
+	right: 0;
+	width:25vw;
+	height: 35vw;
+}
