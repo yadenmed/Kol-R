@@ -2,7 +2,7 @@
 	angular.module('starter')
 	.controller('CallController', ['localStorageService', '$scope', '$ionicPopup','$ionicLoading', CallController]);
 	
-	function CallController(localStorageService, $scope, $ionicPopup){
+	function CallController(localStorageService, $scope, $ionicPopup,$ionicLoading){
 
 			$scope.username = localStorageService.get('username');
 			$scope.currentCall = false;
@@ -66,10 +66,10 @@
 			    var video = document.getElementById('contact-video');
 			    video.src = window.URL.createObjectURL(stream);
 			    video.onloadedmetadata = function(){
-					$ionicPopup.alert({
-						title: 'Call Ongoing',
-						template: 'Call has started. You can speak now'
-					});
+					// $ionicPopup.alert({
+					// 	title: 'Call Ongoing',
+					// 	template: 'Call has started. You can speak now'
+					// });
 			    };
 
 			}
@@ -83,8 +83,8 @@
 				getVideo(
 				    function(MediaStream){
 
-				        $scope.currentCall = peer.call(contact_username, MediaStream);
-				        
+				        var call = peer.call(contact_username, MediaStream);
+				        $scope.currentCall = call;
 				       	var video = document.getElementById('local-video');
 				       	video.src = window.URL.createObjectURL(MediaStream);
 				        	    
@@ -92,12 +92,12 @@
 				             template: 'In progress...'
 				           });
 
-				        $scope.currentCall.on('stream', onReceiveStream);
-				        $scope.currentCall.on('close',function(){
+				        call.on('stream', onReceiveStream);
+				        call.on('close',function(){
 				        $scope.currentCall = null;
 				        $ionicPopup.alert({
-				        	title: 'Call Denied',
-				        	template: 'Your call was denied !'
+				        	title: 'Call Ended',
+				        	template: 'Your call was ended !'
 				        });
 				    });
 				    },
