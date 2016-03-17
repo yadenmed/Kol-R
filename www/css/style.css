@@ -30,12 +30,21 @@
 #contact-video{
 	width: 95vw;
 	height: 95vw;
+	
 }
 
 #local-video{
 	position: absolute;
-	top:0;
+	bottom:0;
 	right: 0;
 	width:25vw;
 	height: 35vw;
+	
+}
+
+.call-container{
+	position: relative;
+	background-color: rgba(20,20,20,0.2);
+	width: 95vw;
+	height: 95vw;
 }
