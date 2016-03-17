@@ -7,14 +7,14 @@
   <h1 class='hello'>
     Hello <strong>{{ username }}</strong>
   </h1>
-  <div class="list" ng-hide="currentCall">
+  <div class="list " ng-hide="currentCall">
     <label class="item item-input">
       <span class="input-label">Contact Username</span>
       <input type="text" ng-model="contact_username">
     </label>
   </div>
 
-  <div ng-if="currentCall">
+  <div class="call-container" ng-show="currentCall">
     <video id="contact-video" autoplay></video>
     <video id="local-video" autoplay muted></video>
   </div>
