@@ -20,7 +20,7 @@
   </div>
    
 
-  <button class="button button-balanced  icon-left ion-android-call col-50 col-offset-25 button-block" ng-hide="currentCall"  ng-click="startCall()">
+  <button class="button button-balanced  icon-left ion-android-call col-50 col-offset-25 button-block" ng-disabled="!contact_username" ng-hide="currentCall"  ng-click="startCall()">
     Call
   </button>
   <button class="button button-assertive  icon-left ion-stop col-50 col-offset-25 button-block" ng-show="currentCall"  ng-click="endCall()">
