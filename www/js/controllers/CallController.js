@@ -25,7 +25,11 @@
 			// );
 
 			function getVideo(successCallback, errorCallback){
-			    navigator.webkitGetUserMedia({audio: true, video: true}, successCallback, errorCallback);
+				navigator.getUserMedia = ( navigator.getUserMedia ||
+				                       navigator.webkitGetUserMedia ||
+				                       navigator.mozGetUserMedia ||
+				                       navigator.msGetUserMedia);
+			    navigator.getUserMedia({audio: true, video: true}, successCallback, errorCallback);
 			}
 
 
@@ -74,7 +78,7 @@
 
 			}
 			$scope.endCall = function(){
-				$scope.currentCall.close();
+				$scope.currentCall.stop();
 				$scope.currentCall = null;
 			}
 			$scope.startCall = function(){

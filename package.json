@@ -20,7 +20,8 @@
     "org.apache.cordova.device",
     "org.apache.cordova.console",
     "com.ionic.keyboard",
-    "org.apache.cordova.splashscreen"
+    "org.apache.cordova.splashscreen",
+    "cordova-plugin-network-information"
   ],
   "cordovaPlatforms": [
     "android"
